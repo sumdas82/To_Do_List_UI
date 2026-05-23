@@ -150,7 +150,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                   border: Border.all(color: Colors.grey.shade300),
                 ),
                 child: DropdownButtonFormField<TaskStatus>(
-                  value: _selectedStatus,
+                  initialValue: _selectedStatus,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     contentPadding: const EdgeInsets.symmetric(
