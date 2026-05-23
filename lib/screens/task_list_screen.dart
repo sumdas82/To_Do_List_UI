@@ -3,10 +3,15 @@ import 'package:todo_list_ui/widget/task_card.dart';
 import '../models/task.dart';
 import 'add_task_screen.dart';
 
-class TaskListScreen extends StatelessWidget {
-  TaskListScreen({super.key});
+class TaskListScreen extends StatefulWidget {
+  const TaskListScreen({super.key});
 
-  final List<Task> tasks = [
+  @override
+  State<TaskListScreen> createState() => _TaskListScreenState();
+}
+
+class _TaskListScreenState extends State<TaskListScreen> {
+  List<Task> tasks = [
     Task(
       id: '01',
       title: 'Good Morning, Mr Sumon!!! Wake Up...',
@@ -33,15 +38,22 @@ class TaskListScreen extends StatelessWidget {
     ),
   ];
 
+  void addTask (Task newTask) {
+    setState(() {
+      tasks.add(newTask);
+    });
+  }  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(        
         title: const Text(
           'To-Do List',
           style: TextStyle(fontWeight: FontWeight.bold),
+          
         ),
-        centerTitle: false,
+        centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
