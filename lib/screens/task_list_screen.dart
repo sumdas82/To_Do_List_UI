@@ -27,7 +27,7 @@ class TaskListScreen extends StatelessWidget {
     ),
     Task(
       id: '04',
-      title: 'Have Breakfast and Reday for Office',
+      title: 'Have Breakfast and Ready for Office',
       time: '08:30 PM',
       status: TaskStatus.todo,
     ),
